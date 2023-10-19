@@ -16,3 +16,15 @@ function toggleFilterDogs(e) {
       updateDogBar();
     }
   }
+
+  function addAllDogsToDogBar(dogArray, filter = false) {
+    const dogBar = document.querySelector("#dog-bar");
+    dogBar.innerHTML = "";
+    if (filter) {
+      dogArray.filter((dog) => dog.isGoodDog).forEach(addDogSpantoDogBar);
+    } else {
+      dogArray.forEach(addDogSpantoDogBar);
+    }
+  }
+
+  
